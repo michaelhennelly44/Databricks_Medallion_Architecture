@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    pipeline_customer_order_pipeline_sql_ldp:
+      name: Customer - Order Pipeline (SQL LDP)
+      configuration:
+        config_catalog: workspace
+        config_schema: sim_retail_demo
+      libraries:
+        - glob:
+            include: /Workspace/Sim Retail Pipeline/dlt_pipeline.sql
+      schema: sim_retail_demo
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: workspace
+      serverless: true
+      root_path: /Workspace/Sim Retail Pipeline

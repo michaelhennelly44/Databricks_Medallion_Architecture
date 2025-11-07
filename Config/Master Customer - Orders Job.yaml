@@ -1,0 +1,37 @@
+resources:
+  jobs:
+    Master_Customer_Orders_Job:
+      name: Master Customer - Orders Job
+      tasks:
+        - task_key: Add_Next_File
+          spark_python_task:
+            python_file: /Workspace/Sim Retail Data/add_next_file.py
+          environment_key: Default
+        - task_key: Run_Lakeflow_Declarative_Pipeline
+          depends_on:
+            - task_key: Add_Next_File
+          pipeline_task:
+            pipeline_id: 49aab977-771a-4de7-b601-cdff5110aee3
+            full_refresh: false
+        - task_key: Run_Pyspark_Pipeline_Job
+          depends_on:
+            - task_key: Add_Next_File
+          run_job_task:
+            job_id: 650595912147495
+        - task_key: Refresh_Customer_Orders_Dashboard
+          depends_on:
+            - task_key: Run_Pyspark_Pipeline_Job
+          dashboard_task:
+            subscription:
+              subscribers:
+                - user_name: mike.hennelly@goamplifi.com
+              custom_subject: "Refreshed: Customer and Orders Dashboard"
+            warehouse_id: a22daf774ac6efdd
+            dashboard_id: 01f0a9fde3ac1969ae5bd18175ff4411
+      queue:
+        enabled: true
+      environments:
+        - environment_key: Default
+          spec:
+            environment_version: "4"
+      performance_target: PERFORMANCE_OPTIMIZED

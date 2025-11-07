@@ -1,0 +1,38 @@
+resources:
+  jobs:
+    Customer_Orders_Pipeline_Pyspark_Job:
+      name: Customer - Orders Pipeline (Pyspark Job)
+      tasks:
+        - task_key: Run_Pyspark_Bronze
+          notebook_task:
+            notebook_path: /Workspace/Sim Retail Data/Pyspark Bronze
+            source: WORKSPACE
+          max_retries: 1
+          min_retry_interval_millis: 3000
+          disable_auto_optimization: true
+        - task_key: Run_Pyspark_Silver
+          depends_on:
+            - task_key: Run_Pyspark_Bronze
+          notebook_task:
+            notebook_path: /Workspace/Sim Retail Data/Pyspark Silver
+            source: WORKSPACE
+          max_retries: 1
+          min_retry_interval_millis: 3000
+          disable_auto_optimization: true
+        - task_key: Run_Pyspark_Gold
+          depends_on:
+            - task_key: Run_Pyspark_Silver
+          notebook_task:
+            notebook_path: /Workspace/Sim Retail Data/Pyspark Gold
+            source: WORKSPACE
+          max_retries: 1
+          min_retry_interval_millis: 3000
+          disable_auto_optimization: true
+      queue:
+        enabled: true
+      parameters:
+        - name: catalog
+          default: workspace
+        - name: schema
+          default: sim_retail_demo
+      performance_target: PERFORMANCE_OPTIMIZED
