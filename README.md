@@ -1,5 +1,5 @@
 # Databricks_Medallion_Architecture
-A demonstration of the Medallion Architecture in Databricks using the databricks_simulated_retail_customer_data from Databricks Marketplace. Includes Pyspark notebooks, SQL file for LDP built, config YAML files for jobs, config JSON file for Dashboard, and instructions for AI Genie space.
+A demonstration of the Medallion Architecture in Databricks using databricks_simulated_retail_customer_data from Databricks Marketplace. Includes Pyspark notebooks, SQL file for LDP build, config YAML files for jobs, config JSON file for Dashboard, and instructions for AI Genie space.
 
 ## Loading Data
 Data is available on Databrick Marketplace. Search for **Simulated Retail Customer Data** on Databricks Marketplace and click "Get Instant Access". The bronze table code assumes loading in files from the delta share of this data from Databricks Marketplace.
