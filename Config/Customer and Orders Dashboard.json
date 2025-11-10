@@ -4,42 +4,42 @@
       "name": "3d260e7a",
       "displayName": "customers_silver_pyspark",
       "queryLines": [
-        "SELECT * FROM workspace.sim_retail_demo.customers_silver_pyspark"
+        "SELECT * FROM demo.sim_retail_demo.customers_silver_pyspark"
       ]
     },
     {
       "name": "28b3b59b",
       "displayName": "gold_customer_order_history_pyspark",
       "queryLines": [
-        "SELECT * FROM workspace.sim_retail_demo.gold_customer_order_history_pyspark"
+        "SELECT * FROM demo.sim_retail_demo.gold_customer_order_history_pyspark"
       ]
     },
     {
       "name": "8467dec2",
       "displayName": "gold_orders_by_city_state_pyspark",
       "queryLines": [
-        "SELECT * FROM workspace.sim_retail_demo.gold_orders_by_city_state_pyspark"
+        "SELECT * FROM demo.sim_retail_demo.gold_orders_by_city_state_pyspark"
       ]
     },
     {
       "name": "4ce167b4",
       "displayName": "gold_returns_by_customer_pyspark",
       "queryLines": [
-        "SELECT * FROM workspace.sim_retail_demo.gold_returns_by_customer_pyspark"
+        "SELECT * FROM demo.sim_retail_demo.gold_returns_by_customer_pyspark"
       ]
     },
     {
       "name": "9f856d87",
       "displayName": "orders_silver_pyspark",
       "queryLines": [
-        "SELECT * FROM workspace.sim_retail_demo.orders_silver_pyspark"
+        "SELECT * FROM demo.sim_retail_demo.orders_silver_pyspark"
       ]
     },
     {
       "name": "8e83c50f",
       "displayName": "status_silver_pyspark",
       "queryLines": [
-        "SELECT * FROM workspace.sim_retail_demo.status_silver_pyspark"
+        "SELECT * FROM demo.sim_retail_demo.status_silver_pyspark"
       ]
     },
     {
@@ -58,14 +58,14 @@
         "LEFT JOIN customers_silver_pyspark c \r\n",
         "ON O.customer_id = C.customer_id; "
       ],
-      "catalog": "workspace",
+      "catalog": "demo",
       "schema": "sim_retail_demo"
     },
     {
       "name": "0ee8353e",
       "displayName": "gold_current_orders_pyspark",
       "queryLines": [
-        "SELECT * FROM workspace.sim_retail_demo.gold_current_orders_pyspark"
+        "SELECT * FROM demo.sim_retail_demo.gold_current_orders_pyspark"
       ]
     },
     {
@@ -87,7 +87,7 @@
         "LEFT JOIN customers_silver_pyspark c\r\n",
         "ON o.customer_id = c.customer_id;"
       ],
-      "catalog": "workspace",
+      "catalog": "demo",
       "schema": "sim_retail_demo"
     }
   ],
