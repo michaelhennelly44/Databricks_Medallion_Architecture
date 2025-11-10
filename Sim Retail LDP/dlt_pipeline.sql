@@ -158,3 +158,5 @@ FROM status_ranked sr
 LEFT JOIN orders_silver_ldp o 
 ON sr.order_id = o.order_id
 WHERE sr.current_status = 1;
+
+
