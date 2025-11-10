@@ -1,5 +1,5 @@
 # configure catalog and schema
-catalog = "workspace"
+catalog = "demo"
 schema = "sim_retail_demo"
 
 # function to add a file from the sample / simulated streaming volume into demo volume
