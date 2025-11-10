@@ -21,7 +21,7 @@ def add_next_file():
 
     #check if there are any files in the volume
     if len(current_files) == 0:
-        add_file("01")
+        add_file("00")
         return
 
     # parse file numbers out of current files
